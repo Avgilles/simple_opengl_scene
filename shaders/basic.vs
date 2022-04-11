@@ -42,11 +42,16 @@ layout (location = 2) in vec2 vsiTexCoord;
 uniform mat4 projection, model, view;
 
 out float IL;
-vec3 Ld = vec3(0,-.707,-0.707);
+vec3 Lp = vec3(0,10.5, 3.0);
 
 void main(void) {
   vec3 N = normalize((transpose(inverse(model)) * vec4(vsiNormal, 0.0)).xyz);
+
+  vec4 modpos = model * vec4(vsiPosition, 1.0f);
+  vec3 Ld = normalize(modpos.xyz - Lp);
   IL = dot(N, -Ld);
+
+
   vec4 pos = projection * view * model * vec4(vsiPosition, 1.0f);
   gl_Position = pos;
 }
