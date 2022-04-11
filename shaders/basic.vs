@@ -21,11 +21,19 @@
 /* variable cablée sur l'attribut 0 du sommet dans le code CPU (dans
  * gl4dg.c, dans l'appel glVertexAttribPointer(0, ...), le 0
  * correspond au location = 0) */
+
+
 layout (location = 0) in vec3 vsiPosition;
+
+
 /* variable cablée sur l'attribut 1 du sommet dans le code CPU (dans
  * gl4dg.c, dans l'appel glVertexAttribPointer(1, ...), le 1
  * correspond au location = 1) */
+
+
 layout (location = 1) in vec3 vsiNormal;
+
+
 /* variable cablée sur l'attribut 2 du sommet dans le code CPU (dans
  * gl4dg.c, dans l'appel glVertexAttribPointer(2, ...), le 2
  * correspond au location = 2) */
@@ -33,7 +41,11 @@ layout (location = 2) in vec2 vsiTexCoord;
 
 uniform mat4 projection, model, view;
 
+out float IL;
+vec3 Ld = vec3(0,-.707,-0.707);
+
 void main(void) {
+  IL = dot(vsiNormal, -Ld);
   vec4 pos = projection * view * model * vec4(vsiPosition, 1.0f);
   gl_Position = pos;
 }

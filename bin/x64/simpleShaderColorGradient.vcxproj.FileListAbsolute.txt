@@ -1,2 +1,3 @@
 C:\Users\Gilles AVRAAM\Documents\GitHub\first_demo_scene\sc_01_01_simpleShaderColorGradient-1.0.20220405\bin\x64\simpleShaderColorGradient.exe
 C:\Users\Gilles AVRAAM\Documents\GitHub\first_demo_scene\simple_opengl_scene\bin\x64\simpleShaderColorGradient.exe
+C:\Users\Gilles AVRAAM\Documents\GitHub\OpenGL\bin\x64\simpleShaderColorGradient.exe

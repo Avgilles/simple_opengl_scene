@@ -1,3 +1,1 @@
-﻿  window.cpp
-window.obj : warning LNK4075: ' /EDITANDCONTINUE' ignoré à cause de la spécification '/INCREMENTAL:NO'
-  simpleShaderColorGradient.vcxproj -> C:\Users\Gilles AVRAAM\Documents\GitHub\first_demo_scene\simple_opengl_scene\bin\x64\simpleShaderColorGradient.exe
+﻿  simpleShaderColorGradient.vcxproj -> C:\Users\Gilles AVRAAM\Documents\GitHub\OpenGL\bin\x64\simpleShaderColorGradient.exe

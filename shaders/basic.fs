@@ -8,10 +8,12 @@
 /* Version GLSL 3.30 */
 #version 330
 /* sortie du frament shader : une couleur */
+in float IL;
+
 out vec4 fragColor;
 uniform vec4 diffuse_color;
 
 void main(void) {
   /* mettre la couleur de sortie à color */
-  fragColor = diffuse_color;
+  fragColor = IL* diffuse_color;
 }
