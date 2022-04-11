@@ -45,7 +45,8 @@ out float IL;
 vec3 Ld = vec3(0,-.707,-0.707);
 
 void main(void) {
-  IL = dot(vsiNormal, -Ld);
+  vec3 N = normalize((transpose(inverse(model)) * vec4(vsiNormal, 0.0)).xyz);
+  IL = dot(N, -Ld);
   vec4 pos = projection * view * model * vec4(vsiPosition, 1.0f);
   gl_Position = pos;
 }
