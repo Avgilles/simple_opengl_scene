@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "09538aa9-09e1-4f92-a30f-6056ba775523": {
+      "ProjectGuid": "09538aa9-09e1-4f92-a30f-6056ba775523",
+      "DisplayName": "simpleShaderColorGradient",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
