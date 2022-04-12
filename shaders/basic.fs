@@ -17,8 +17,8 @@ in vec4 vsoModPos;
 out vec4 fragColor;
 uniform vec4 diffuse_color;
 
-
-vec3 Lp = vec3(0,10.5, 3.0);
+vec4 ambient_light = vec4(0.75, .75, 0.25, 1.0);
+vec3 Lp = vec3(0,0.5, 3.0);
 
 
 void main(void) {
@@ -26,5 +26,6 @@ void main(void) {
   vec3 Ld = normalize(vsoModPos.xyz - Lp);
   float IL = dot(vsoNormal, -Ld);
   /* mettre la couleur de sortie à color */
-  fragColor = IL* diffuse_color;
+  /* généralement on set l'ambient occcusion a 20% et la light a 80% */
+  fragColor = 0.2 * ambient_light + .8 * IL * diffuse_color;
 }
