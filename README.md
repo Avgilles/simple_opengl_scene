@@ -73,3 +73,5 @@ void main(void) {
 }
 
 ```
+
+![](/preview/phong_light_specular.gif)

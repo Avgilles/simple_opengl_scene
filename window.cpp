@@ -66,6 +66,9 @@ static void init(void) {
 static void draw(void) {
   const GLfloat rouge[] = { 1.0f, 0.0f, 0.0f, 1.0f };
   const GLfloat bleu[] = { 0.0f, 0.0f, 1.0f, 1.0f };
+  const GLfloat bleu_cyan[] = { 0.019f, 0.91f, 0.48f, 1.0f };
+  const GLfloat chrome[] = { 0.7f, 0.6f, 0.3f, 1.0f };
+  const GLfloat mat[] = { 0.1f, 0.1f, 0.1f, 1.0f };
 
   /* Variation de temps en seconde sur la frmae actuelle par rapport à la precedente */
   static double t0 = 0.0;
@@ -78,6 +81,8 @@ static void draw(void) {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   /* activation du programme de rendu _pId */
   glUseProgram(_pId);
+  glUniform4fv(glGetUniformLocation(_pId, "ambient_light"), 1, bleu_cyan);
+
   gl4duBindMatrix("view");
   gl4duLoadIdentityf();
   gl4duLookAtf(-5, 6, 6, 0, 0, 0, 0, 1, 0);
@@ -88,7 +93,8 @@ static void draw(void) {
 	  gl4duRotatef(-90, 1, 0, 0);
 	  gl4duSendMatrices();
 	  /* du rouge pour le quad */
-	  glUniform4fv(glGetUniformLocation(_pId, "diffuse_color"), 1, rouge);
+	  glUniform4fv(glGetUniformLocation(_pId, "diffuse_color"), 1, bleu_cyan);
+	  glUniform4fv(glGetUniformLocation(_pId, "specular_color"), 1, mat);
 	  /* dessin de la géométrie du quadrilatère */
 	  gl4dgDraw(_quad);
   }
@@ -100,6 +106,7 @@ static void draw(void) {
   gl4duSendMatrices();
   /* du bleu pour le cube */
   glUniform4fv(glGetUniformLocation(_pId, "diffuse_color"), 1, bleu);
+  glUniform4fv(glGetUniformLocation(_pId, "specular_color"), 1, chrome);
   /* dessin de la géométrie du cube */
   gl4dgDraw(_cube);
   /* désactiver le programme shader */

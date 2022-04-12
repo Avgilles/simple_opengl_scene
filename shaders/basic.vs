@@ -47,6 +47,6 @@ out vec4 vsoModPos;
 
 void main(void) {
   vsoNormal = normalize((transpose(inverse(model)) * vec4(vsiNormal, 0.0)).xyz);
-  vsoModPos = model * vec4(vsiPosition, 1.0f);
+  vsoModPos = model * vec4(vsiPosition, 1.0);
   gl_Position =  projection * view * vsoModPos;
 }
